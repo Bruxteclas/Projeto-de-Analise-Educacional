@@ -1,8 +1,7 @@
-## Projeto de Análise Educacional
 
-## Visão Geral
+# Análise de Desempenho Educacional
 
-Este projeto visa analisar e modelar o desempenho dos alunos em diferentes regiões e escolas, identificar os fatores determinantes desse desempenho e prever a performance futura com base em dados históricos. O projeto utiliza uma combinação de técnicas estatísticas e de aprendizado de máquina para gerar insights e previsões sobre o desempenho dos alunos.
+Este projeto tem como objetivo analisar o desempenho dos alunos em duas disciplinas: Língua (L) e Matemática (MT), utilizando técnicas de análise estatística, visualização de dados e aprendizado de máquina para gerar insights e previsões sobre o desempenho dos alunos.
 
 ## Objetivos do Projeto
 
@@ -82,72 +81,9 @@ Este projeto visa analisar e modelar o desempenho dos alunos em diferentes regi�
 - **Estados com Maior Desempenho**: SC, CE, DF, SP, MG.
 - **Estados com Menor Desempenho**: SE, RN, PI, AL, MA.
 
-### Desempenho por Série
-
-- **Série 2**: Média de proficiência alta, indicando bom desempenho.
-
-### Desempenho por Rede de Ensino
-
-- **Rede 1**: Melhor desempenho médio.
-- **Redes 2 e 3**: Desempenho abaixo da média.
-
 ### Análise Qualitativa
 
 - **Respostas Textuais**: Análise de consistência e identificação de padrões comuns.
-
-## Modelagem Preditiva
-
-### Modelos Utilizados
-
-- **Regressão Linear**
-- **Random Forest Regressor**
-- **Rede Neural Multi-Layer Perceptron (MLP)**
-- **Ridge Regression**
-
-### Resultados
-
-- **Proficiência Real**: Média ligeiramente negativa e alta variação.
-- **Previsão de Performance Futuro**: Média positiva e menor variação.
-
-## Desempenho do Modelo
-
-### Métricas de Avaliação
-
-- **Erro Quadrático Médio (Mean Squared Error - MSE):**  
-  O MSE do modelo é de `6.566262516275374e-08`, indicando um erro muito baixo nas previsões.
-
-- **Pontuação $R^2$ ($R^2$ Score):**  
-  A pontuação $R^2$ do modelo é de `0.9999973565902573`, o que sugere que o modelo explica quase toda a variabilidade dos dados.
-
-### Validação Cruzada
-
-- **Pontuações $R^2$ na Validação Cruzada:**  
-  As pontuações $R^2$ obtidas através da validação cruzada são:
-  - 0.9956965
-  - 0.99999744
-  - 0.99999732
-  - 0.99999728
-  - 0.9999975
-
-- **Média das Pontuações $R^2$ na Validação Cruzada:**  
-  A média das pontuações $R^2$ na validação cruzada é de `0.9991372061360755`, indicando uma excelente generalização do modelo.
-
-### Erro por Conjunto de Dados
-
-- **Erro Quadrático Médio no Conjunto de Treinamento:**  
-  O MSE no conjunto de treinamento é de `6.516003484294454e-08`.
-
-- **Erro Quadrático Médio no Conjunto de Teste:**  
-  O MSE no conjunto de teste é de `6.566262516275374e-08`.
-
-- **Pontuação $R^2$ no Conjunto de Treinamento:**  
-  A pontuação $R^2$ no conjunto de treinamento é de `0.9999973474314431`.
-
-- **Pontuação $R^2$ no Conjunto de Teste:**  
-  A pontuação $R^2$ no conjunto de teste é de `0.9999973565902573`.
-
-Essas métricas indicam que o modelo está performando extremamente bem tanto no conjunto de treinamento quanto no conjunto de teste, com uma baixa margem de erro e excelente capacidade de explicação da variabilidade dos dados.
-
 --- 
 
 ## Análise dos Componentes Principais (PCA)
@@ -206,31 +142,70 @@ Essas métricas indicam que o modelo está performando extremamente bem tanto no
   A interação significativa entre `rede` e `localizacao` sugere que o efeito da rede sobre o desempenho dos alunos pode depender da localização, e vice-versa. Isso pode indicar que a eficácia de uma rede educacional pode variar de acordo com a localização geográfica, possivelmente devido a variações regionais nas condições e na qualidade dos recursos educacionais.
   
 
-### Previsão de Desempenho Futuro
-- **Proficiência Real**: Média ligeiramente negativa, grande variação.
-- **Previsão Futuro**: Média positiva, menor variação, sugestão de previsão otimista.
+## 1. Desempenho Médio por Disciplina
 
-**Insights**
-- **Desempenho por Rede**: Rede 1 tem a previsão mais alta, Rede 3 a mais baixa.
-- **Comparação de Redes**: Analisar diferenças e fatores contribuintes.
+O gráfico intitulado **"Desempenho Médio por Disciplina"** mostra a **proficiência média** nas duas disciplinas:
+
+- **Desempenho em Língua**: A proficiência média em Língua é de aproximadamente -0,13, indicando um desempenho mais baixo.
+- **Desempenho em Matemática**: A proficiência média em Matemática é de cerca de -0,08, mostrando um desempenho relativamente melhor.
+- **Comparação Geral**: Os alunos têm um desempenho melhor em Matemática do que em Língua, conforme indicado pelas barras no gráfico.
+
+## 4. Análise dos Resultados e Modelagem Preditiva
+
+### Gráfico de Valores Reais vs. Previsto
+- **Ajuste do Modelo**: A proximidade dos pontos à linha de referência sugere um ajuste sólido.
+- **Precisão**: A concentração dos pontos em torno da linha indica que o modelo captura bem as relações entre as variáveis.
+- **Erros Pequenos**: A pequena dispersão sugere previsões consistentes.
+
+### Distribuição dos Resíduos
+- **Distribuição Normal**: Uma distribuição normal dos resíduos indica que o modelo está adequadamente especificado.
+- **Simetria**: Indica que o modelo não tem tendência a subestimar ou superestimar valores.
+- **Erros Pequenos**: A concentração dos resíduos próximos de zero sugere previsões precisas.
+
+### Métricas do Modelo
+- **Mean Absolute Error (MAE)**: 0.2042
+- **Mean Squared Error (MSE)**: 0.0930
+- **R² Score**: 0.8838
+
+### Coeficientes das Variáveis
+| Feature                   | Coefficient    |
+|--------------------------|-----------------|
+| preenchimento_caderno    | 337.033411      |
+| serie                    | 143.166950      |
+| erro_padrao_saeb        | 141.164310      |
+| bloco_2_aberto          | 123.476702      |
+| bloco_1                 | 61.739460       |
+| ...                      | ...             |
+| situacao_censo          | -179.450302     |
+| indicador_proficiencia   | -179.936298     |
+| presenca                | -209.829670     |
+| erro_padrao             | -7815.856891    |
+
+### Valores Reais vs. Previsto
+| Real    | Previsto | Resíduo   |
+|---------|----------|-----------|
+| 177544  | 0.221238 | 0.089266  |
+| 115650  | -1.004777| -0.670311 |
+| ...     | ...      | ...       |
+
+A média dos scores de validação cruzada (0.8845) indica um bom desempenho do modelo, com consistência e robustez nas previsões.
+
+## 5. Insights Gerais
+
+1. **Diferenças Entre Redes de Ensino**: Variações na proficiência média entre diferentes redes, com uma rede apresentando desempenho superior.
+2. **Identificação de Melhores Práticas**: A rede com maior proficiência pode implementar práticas que outras redes podem adotar.
+3. **Foco em Intervenções**: Redes com menor proficiência podem precisar de intervenções específicas.
+
+### Tendências e Padrões
+1. **Tendência Geral Positiva**: Ambos os anos mostram um aumento na proficiência prevista ao longo do tempo.
+2. **Crescimento Consistente**: A proficiência aumenta de forma contínua, sugerindo melhorias no desempenho dos alunos.
+3. **Planejamento Educacional**: Os dados podem ajudar na alocação de recursos e identificação de períodos que requerem suporte.
 
 ## Conclusão
 
-- **Desempenho Variável**: Identificação de diferenças significativas entre redes e estados.
-- **Tendência de Queda**: Tendência de queda na proficiência dos alunos ao longo dos anos, necessitando investigação.
-- **Ações Potenciais**: Investigar práticas bem-sucedidas em redes com melhor desempenho e focar em áreas com desempenho mais baixo.
+Este projeto oferece insights valiosos sobre o desempenho educacional dos alunos e como fatores como rede de ensino e localização podem influenciar a proficiência. A análise estatística e as visualizações ajudam a entender melhor as dinâmicas de aprendizagem e a formular intervenções educativas eficazes.
 
-## Contribuições
+## Autor
+- [Paulo Eduardo]
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um *issue* ou enviar um *pull request*.
-
-## Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## Download dos Dados
-
-Para baixar os dados, clique no link abaixo:
-
-[Baixar Dados](https://basedosdados.org/dataset/e083c9a2-1cee-4342-bedc-535cbad6f3cd?table=d429a79a-eca1-461c-9c1f-ce65d61048a1)
 
