@@ -152,11 +152,6 @@ O gráfico intitulado **"Desempenho Médio por Disciplina"** mostra a **profici�
 
 ## 4. Análise dos Resultados e Modelagem Preditiva
 
-### Gráfico de Valores Reais vs. Previsto
-- **Ajuste do Modelo**: A proximidade dos pontos à linha de referência sugere um ajuste sólido.
-- **Precisão**: A concentração dos pontos em torno da linha indica que o modelo captura bem as relações entre as variáveis.
-- **Erros Pequenos**: A pequena dispersão sugere previsões consistentes.
-
 ### Distribuição dos Resíduos
 - **Distribuição Normal**: Uma distribuição normal dos resíduos indica que o modelo está adequadamente especificado.
 - **Simetria**: Indica que o modelo não tem tendência a subestimar ou superestimar valores.
