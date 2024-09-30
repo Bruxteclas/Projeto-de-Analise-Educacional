@@ -71,8 +71,7 @@ Este projeto tem como objetivo analisar o desempenho dos alunos em duas discipli
 - `sklearn` para machine learning e pré-processamento de dados.
 - `joblib` para salvamento e carregamento de modelos.
 - `wordcloud` para visualização de palavras.
-- **Machine Learning**: `sklearn` (MLPRegressor, RandomForestRegressor, Ridge)
-- Entre outras bibliotecas contidas no arquivo.
+- **Machine Learning**: Linear Regression
 
 ## Insights
 
